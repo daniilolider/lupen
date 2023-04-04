@@ -3,4 +3,4 @@ from typing import Final
 
 
 class TOKENS:
-    mathurai_TOKEN: Final = getenv('mathurai_TOKEN', "token isn't in env")
+    mathurai_TOKEN: Final = getenv('lupen_TOKEN', "token isn't in env")

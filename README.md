@@ -1,4 +1,2 @@
-# mathuraibot 
-Mathematic's bot-helper Масюра
-
-v0.1
+# LupenBot
+Mathematic's bot-helper Лупень
