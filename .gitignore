@@ -147,3 +147,5 @@ cython_debug/
 # ТЗ бота
 lupen's requirements
 
+# Белый список
+# whitelist.txt

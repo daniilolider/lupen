@@ -2,5 +2,5 @@ from os import getenv
 from typing import Final
 
 
-class TOKENS:
+class KEYS:
     mathurai_TOKEN: Final = getenv('lupen_TOKEN', "token isn't in env")
