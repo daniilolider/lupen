@@ -148,4 +148,4 @@ cython_debug/
 lupen's requirements
 
 # Белый список
-# whitelist.txt
+whitelist.txt
