@@ -1,16 +1,17 @@
 from aiogram import Dispatcher, Bot
-from aiogram.utils import executor
 
 from bot.misc.env import KEYS
-from bot.handlers.main_handlers import register_all_handlers
+
+from bot.handlers.user.commands.user_commands import user_router
+from bot.handlers.creator.creatorcommands import creator_router
 
 
-async def __on_starup(dp: Dispatcher) -> None:
-    register_all_handlers(dp)
-    print('Online')
-
-
-def start_bot():
+async def start_bot():
     bot = Bot(token=KEYS.mathurai_TOKEN, parse_mode='html')
-    dp = Dispatcher(bot)
-    executor.start_polling(dp, skip_updates=True, on_startup=__on_starup)
+    dp = Dispatcher()
+
+    dp.include_routers(user_router,
+                       creator_router)
+
+    await bot.delete_webhook(drop_pending_updates=True)
+    await dp.start_polling(bot)
