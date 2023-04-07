@@ -1,11 +1,6 @@
-from aiogram import Router
-from aiogram.filters import Text
-
-from .chatgpt_callback import send_chat_gpt
-from .schedule_callback import send_schedule_command
+from bot.callbacks.help_message.main_callbacks import reg_help_message_callbacks
+from bot.routers.whitelist.whitelist_router import whitelist_router
 
 
-def reg_all_callbacks(router: Router):
-    router.callback_query.register(send_chat_gpt, Text('chatgpt'))
-
-    router.callback_query.register(send_schedule_command, Text('schedule'))
+def reg_all_callbacks():
+    reg_help_message_callbacks(whitelist_router)

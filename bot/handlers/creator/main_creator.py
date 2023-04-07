@@ -1,4 +1,4 @@
-from bot.routers.routers import creator_router
+from bot.routers.creator.creator_router import creator_router
 from .commands.main_creator_commands import reg_creator_commands
 
 
