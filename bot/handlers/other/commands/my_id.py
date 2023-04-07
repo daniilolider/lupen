@@ -6,7 +6,7 @@ async def cmd_my_id(message: Message):
     print('#########################################\n' 
            f'{message.chat.id} - chat id\n'
            f'{message.from_user.id} - user id\n'
-           f'{message.from_user.first_name} - firstname\n'
-           f'{message.from_user.last_name} - lastname\n'
-           f'{message.from_user.username} - username\n'
+           f'{message.from_user.first_name} - first name\n'
+           f'{message.from_user.last_name} - last name\n'
+           f'{message.from_user.username} - user name\n'
            f'#########################################\n\n')

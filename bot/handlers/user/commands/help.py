@@ -1,7 +1,7 @@
 from aiogram.types import Message
 
 
-async def text_help(message: Message) -> None:
+async def cmd_help(message: Message) -> None:
     """Выводит меню помощи"""
     from bot.keyboards.Inline.help_message import help_message
 

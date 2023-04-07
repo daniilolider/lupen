@@ -14,7 +14,7 @@ from bot.handlers.main_handlers import reg_all_handlers
 
 async def start_bot():
 
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         filename='logs.log',
                         format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s',
                         datefmt='%H:%M:%S',

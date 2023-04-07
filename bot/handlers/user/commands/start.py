@@ -3,7 +3,7 @@ from aiogram.types import Message
 
 async def cmd_start(message: Message) -> None:
     """Команда /start"""
-    from bot.keyboards.start_bot import start_menu_kb
+    from bot.keyboards.Reply.start_bot import start_menu_kb
 
     start_text = '<b>Помогите мне 🆘!</b> Эти <i>изверги</i> держат меня в заложниках! 😱\n\n' \
                  'Хаха, <u>шучу</u> 😏 Я бот-помогатор студентов группы ПМР❕\n\n' \
