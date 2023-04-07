@@ -5,10 +5,11 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 def start_menu_kb() -> ReplyKeyboardMarkup:
     """Клавиатура при запуске бота"""
 
-    keyboard = ReplyKeyboardBuilder()
+    builder = ReplyKeyboardBuilder()
 
-    keyboard.button(text='Меню')
-    keyboard.button(text='Помощь')
-    keyboard.adjust(2)
+    builder.button(text='Меню')
+    builder.button(text='Помощь')
 
-    return keyboard.as_markup(resize_keyboard=True)
+    keyboard = builder.as_markup(resize_keyboard=True, input_field_placeholder='Куда пойдем?')
+
+    return keyboard
