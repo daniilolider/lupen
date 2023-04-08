@@ -6,5 +6,5 @@ from .menu import text_menu
 
 
 def reg_user_texts(router: Router):
-    router.message.register(text_help, Text('Помощь'))
-    router.message.register(text_menu, Text('Меню'))
+    router.message.register(text_help, Text('❔Помощь'))
+    router.message.register(text_menu, Text('📓Меню'))

@@ -1,3 +1,4 @@
+import logging
 from aiogram import Dispatcher, Bot
 
 
@@ -12,6 +13,12 @@ from bot.handlers.main_handlers import reg_all_handlers
 
 
 async def start_bot():
+
+    logging.basicConfig(level=logging.INFO,
+                        filename='logs.txt',
+                        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+                        filemode='w')
+
     bot = Bot(token=KEYS.mathurai_TOKEN, parse_mode='html')
     dp = Dispatcher()
 

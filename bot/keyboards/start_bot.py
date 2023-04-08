@@ -7,8 +7,8 @@ def start_menu_kb() -> ReplyKeyboardMarkup:
 
     builder = ReplyKeyboardBuilder()
 
-    builder.button(text='Меню')
-    builder.button(text='Помощь')
+    builder.button(text='📓Меню')
+    builder.button(text='❔Помощь')
 
     keyboard = builder.as_markup(resize_keyboard=True, input_field_placeholder='Куда пойдем?')
 
