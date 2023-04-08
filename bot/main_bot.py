@@ -15,8 +15,9 @@ from bot.handlers.main_handlers import reg_all_handlers
 async def start_bot():
 
     logging.basicConfig(level=logging.INFO,
-                        filename='logs.txt',
-                        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+                        filename='logs.log',
+                        format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s',
+                        datefmt='%H:%M:%S',
                         filemode='w')
 
     bot = Bot(token=KEYS.mathurai_TOKEN, parse_mode='html')
