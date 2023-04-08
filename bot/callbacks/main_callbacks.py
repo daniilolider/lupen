@@ -1,5 +1,5 @@
 from bot.callbacks.help_message.main_callbacks import reg_help_message_callbacks
-from bot.routers.callback.callback_router import callback_router
+from bot.routers.whitelist.callback.callback_router import callback_router
 
 
 def reg_all_callbacks():
