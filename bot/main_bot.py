@@ -5,7 +5,7 @@ from aiogram import Dispatcher, Bot
 from bot.misc.env import KEYS
 
 
-from bot.routers.whitelist.whitelist_router import whitelist_router
+from bot.routers.unregistered_router.unregistered_router import unregistered_router
 from bot.routers.creator.creator_router import creator_router
 
 from bot.callbacks.main_callbacks import reg_all_callbacks
@@ -23,7 +23,7 @@ async def start_bot():
     bot = Bot(token=KEYS.mathurai_TOKEN, parse_mode='html')
     dp = Dispatcher()
 
-    dp.include_routers(whitelist_router, creator_router)
+    dp.include_routers(unregistered_router, creator_router)
 
     reg_all_handlers()
     reg_all_callbacks()
