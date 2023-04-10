@@ -4,11 +4,11 @@ from bot.modules.schedule.week_position import WEEK_POSITION
 from bot.data.schedule import days
 
 
+text = '📄<b>Выбранное расписание:</b>\n\n'
+
+
 async def monday(callback: CallbackQuery):
     """Выводит расписание на понедельник верхней/нижней недели"""
-
-    text = 'Выбранное расписание:\n'
-
     if WEEK_POSITION:
         await callback.message.answer(text + days.MONDAY_DOWN)
     else:
@@ -17,9 +17,6 @@ async def monday(callback: CallbackQuery):
 
 async def tuesday(callback: CallbackQuery):
     """Выводит расписание на вторник верхней/нижней недели"""
-
-    text = 'Выбранное расписание:\n'
-
     if WEEK_POSITION:
         await callback.message.answer(text + days.TUESDAY_DOWN)
     else:
@@ -28,9 +25,6 @@ async def tuesday(callback: CallbackQuery):
 
 async def wednesday(callback: CallbackQuery):
     """Выводит расписание на среду верхней/нижней недели"""
-
-    text = 'Выбранное расписание:\n'
-
     if WEEK_POSITION:
         await callback.message.answer(text + days.WEDNESDAY_DOWN)
     else:
@@ -39,9 +33,6 @@ async def wednesday(callback: CallbackQuery):
 
 async def thursday(callback: CallbackQuery):
     """Выводит расписание на четверг верхней/нижней недели"""
-
-    text = 'Выбранное расписание:\n'
-
     if WEEK_POSITION:
         await callback.message.answer(text + days.THURSDAY_DOWN)
     else:
@@ -50,9 +41,6 @@ async def thursday(callback: CallbackQuery):
 
 async def friday(callback: CallbackQuery):
     """Выводит расписание на пятницу верхней/нижней недели"""
-
-    text = 'Выбранное расписание:\n'
-
     if WEEK_POSITION:
         await callback.message.answer(text + days.FRIDAY_DOWN)
     else:

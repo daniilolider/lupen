@@ -1,5 +1,5 @@
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
-from aiogram.types import ReplyKeyboardMarkup
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 def main_menu() -> ReplyKeyboardMarkup:
@@ -10,6 +10,8 @@ def main_menu() -> ReplyKeyboardMarkup:
     builder.button(text='📋Расписание')
     builder.button(text='🤖Задать вопрос ChatGPT')
     builder.button(text='🔢Узнать свои баллы')
+    what_couple_button = KeyboardButton(text='❓Какая сейчас пара?❔')
+    builder.row(what_couple_button)
 
     keyboard = builder.as_markup(resize_keyboard=True, input_field_placeholder='Что будем делать?')
 

@@ -1,7 +1,7 @@
 import datetime
 
-from .couple_constants import FIRTS_START, SECOND_START, THIRD_START, FOURTH_START, FIFTH_START, DAY_START
-from .couple_constants import FIRST_END, SECOND_END, THIRD_END, FOURTH_END, FIFTH_END, DAY_END
+from bot.data.schedule.couple_constants import FIRTS_START, SECOND_START, THIRD_START, FOURTH_START, FIFTH_START, DAY_START
+from bot.data.schedule.couple_constants import FIRST_END, SECOND_END, THIRD_END, FOURTH_END, FIFTH_END, DAY_END
 
 
 def time_interval(now):
