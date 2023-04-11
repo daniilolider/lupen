@@ -101,7 +101,7 @@ def what_couple_now():
     # Если пары уже закончились
     elif lesson_status == 'day_end':
 
-        result = '\n'.join(week[weekday])
+        result = '\n'.join(week[weekday + 1])
 
         text = f'📆Сейчас <b>{weekdays[weekday]}</b> {date}\n' \
                f'{up_or_down}\n\n' \

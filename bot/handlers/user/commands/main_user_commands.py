@@ -8,6 +8,9 @@ from .days_schedule import cmd_monday, cmd_tuesday, cmd_wednesday, cmd_thursday,
 from .weeks_schedule import cmd_week, cmd_down_week, cmd_up_week
 from .photo_week import cmd_photo_week
 from .what_couple_now import cmd_now_couple
+from bot.filters.ChatGPT_filter.ChatGPT_messag_filter import chatgpt_message_filter
+from bot.handlers.user.commands.ChatGPT_reply import cmd_chatgpt_message
+
 
 
 def reg_user_commands(router: Router):
@@ -30,3 +33,8 @@ def reg_user_commands(router: Router):
     router.message.register(cmd_photo_week, Command('photo_schedule', 'фото_расписания', 'фр', prefix='/!'))
 
     router.message.register(cmd_now_couple, Command('now_couple', 'сейчас_пара', 'сп', prefix='/!'))
+
+    router.message.register(cmd_chatgpt_message,
+                            chatgpt_message_filter,
+                            Command('q', '?', prefix='/!'),
+                            flags={'long_operation': 'typing'})

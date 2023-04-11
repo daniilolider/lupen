@@ -1,4 +1,5 @@
 import logging
+import openai
 from aiogram import Dispatcher, Bot
 
 
@@ -19,6 +20,8 @@ async def start_bot():
                         format='[%(asctime)s] [%(name)s/%(levelname)s]: %(message)s',
                         datefmt='%H:%M:%S',
                         filemode='w')
+
+    openai.api_key = KEYS.chatgpt_TOKEN
 
     bot = Bot(token=KEYS.lupen_TOKEN, parse_mode='html')
     dp = Dispatcher()
