@@ -8,8 +8,8 @@ def main_menu() -> ReplyKeyboardMarkup:
     builder = ReplyKeyboardBuilder()
 
     builder.button(text='📋Расписание')
-    builder.button(text='🤖Задать вопрос ChatGPT')
-    builder.button(text='🔢Узнать свои баллы')
+    builder.button(text='🤖Вопрос ChatGPT')
+    builder.button(text='🔢Рейтинг')
     what_couple_button = KeyboardButton(text='❓Какая сейчас пара?❔')
     builder.row(what_couple_button)
 

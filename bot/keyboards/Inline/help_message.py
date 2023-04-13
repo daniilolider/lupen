@@ -8,9 +8,9 @@ def help_message() -> InlineKeyboardMarkup:
 
     builder = InlineKeyboardBuilder()
 
-    schedule_button = InlineKeyboardButton(text='Расписания', callback_data='schedule')
-    chatgpt_button = InlineKeyboardButton(text='Общение с Chat_GPT', callback_data='chatgpt')
-    rating_button = InlineKeyboardButton(text='Узнать свои баллы', callback_data='rating')
+    schedule_button = InlineKeyboardButton(text='Расписаниe', callback_data='schedule_help')
+    chatgpt_button = InlineKeyboardButton(text='Общение с Chat_GPT', callback_data='chatgpt_help')
+    rating_button = InlineKeyboardButton(text='Рейтинг', callback_data='rating_help')
 
     builder.row(schedule_button, chatgpt_button, rating_button)
 

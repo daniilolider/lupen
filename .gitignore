@@ -155,3 +155,6 @@ whitelist.txt
 
 # Логи
 logs.log
+
+# Список команд для изменения команд в BotFather
+list of commands for BotFather

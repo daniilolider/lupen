@@ -25,7 +25,7 @@ def vuz2_request(chat_id: int, number_of_control: int) -> str:
                     1: '❕Зачеты',
                     3: '1️⃣Первый модуль',
                     4: '2️⃣Второй модуль',
-                    7: '❌Итоговый модуль'}
+                    7: '✅Итоговый модуль'}
 
     text = ''
     if number_of_control == 3 or number_of_control == 4 or number_of_control == 7:

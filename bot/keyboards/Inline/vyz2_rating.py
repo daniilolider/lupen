@@ -8,11 +8,11 @@ def vuz2_keyboard() -> InlineKeyboardMarkup:
 
     builder = InlineKeyboardBuilder()
 
-    exams = InlineKeyboardButton(text='Экзамены', callback_data='exams')
-    offsets = InlineKeyboardButton(text='Зачеты', callback_data='offsets')
-    first_module = InlineKeyboardButton(text='Первый модуль', callback_data='first_module')
-    second_module = InlineKeyboardButton(text='Второй модуль', callback_data='second_module')
-    finale_module = InlineKeyboardButton(text='Итоговый модуль', callback_data='finale_module')
+    exams = InlineKeyboardButton(text='Экзамены', callback_data='vuz2_exams')
+    offsets = InlineKeyboardButton(text='Зачеты', callback_data='vuz2_offsets')
+    first_module = InlineKeyboardButton(text='Первый модуль', callback_data='vuz2_first_module')
+    second_module = InlineKeyboardButton(text='Второй модуль', callback_data='vuz2_second_module')
+    finale_module = InlineKeyboardButton(text='Итоговый модуль', callback_data='vuz2_finale_module')
 
     builder.row(exams, offsets)
     builder.row(first_module, second_module)

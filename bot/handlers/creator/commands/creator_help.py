@@ -23,4 +23,8 @@ async def cmd_help_creator(message: Message):
           '/delete_whitelist - удаляет id чата из whitelist\n' 
           'Если id чата не было - выводит соответствующее сообщение в консоль\n\n' 
           '/chat_id - позволяет узнать id чата, в котором была написана эта команда\n' 
-          'Результат выводит в консоль\n\n')
+          'Результат выводит в консоль\n\n'
+          '/add_id_whitelist - добавляет id чата в whitelist\n'
+          'Нужно ввести id чата в качестве сообщения\n\n'
+          '/delete_whitelist_by_id - удаляет id чата из whitelist\n'
+          'Нужно ввести id чата в качестве сообщения\n\n')

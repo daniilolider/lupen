@@ -1,16 +1,20 @@
 from aiogram import Router
 from aiogram.filters import Command
 
-from .start import cmd_start
-from .help import cmd_help
-from .week_position import cmd_week_position
-from .days_schedule import cmd_monday, cmd_tuesday, cmd_wednesday, cmd_thursday, cmd_friday
-from .weeks_schedule import cmd_week, cmd_down_week, cmd_up_week
-from .photo_week import cmd_photo_week
-from .what_couple_now import cmd_now_couple
+from bot.handlers.user.commands.other.start import cmd_start
+from bot.handlers.user.commands.other.help import cmd_help
+from bot.handlers.user.commands.schedule.week_position import cmd_week_position
+from bot.handlers.user.commands.schedule.days_schedule import cmd_monday, cmd_tuesday, cmd_wednesday, cmd_thursday, cmd_friday
+from bot.handlers.user.commands.schedule.weeks_schedule import cmd_week, cmd_down_week, cmd_up_week
+from bot.handlers.user.commands.schedule.photo_week import cmd_photo_week
+from bot.handlers.user.commands.schedule.what_couple_now import cmd_now_couple
 from bot.filters.ChatGPT_filter.ChatGPT_messag_filter import chatgpt_message_filter
-from bot.handlers.user.commands.ChatGPT_reply import cmd_chatgpt_message
-
+from bot.handlers.user.commands.ChatGPT.ChatGPT_reply import cmd_chatgpt_message
+from bot.handlers.user.commands.vuz2_rating.vuz2_rating_exams import cmd_vuz2_rating_exams
+from bot.handlers.user.commands.vuz2_rating.vuz2_rating_offsets import cmd_vuz2_rating_offsets
+from bot.handlers.user.commands.vuz2_rating.vuz2_rating_first_module import cmd_vuz2_rating_first_module
+from bot.handlers.user.commands.vuz2_rating.vuz2_rating_second_module import cmd_vuz2_rating_second_module
+from bot.handlers.user.commands.vuz2_rating.vuz2_rating_final_module import cmd_vuz2_rating_final_module
 
 
 def reg_user_commands(router: Router):
@@ -38,3 +42,12 @@ def reg_user_commands(router: Router):
                             chatgpt_message_filter,
                             Command('q', '?', prefix='/!'),
                             flags={'long_operation': 'typing'})
+
+    router.message.register(cmd_vuz2_rating_exams, Command('vuz2_exams', 'экзамены', 'экзы', prefix='/!'))
+    router.message.register(cmd_vuz2_rating_offsets, Command('vuz2_offsets', 'зачеты', 'зчт', prefix='/!'))
+    router.message.register(cmd_vuz2_rating_first_module,
+                            Command('vuz2_first_module', 'первый_модуль', 'пм', prefix='/!'))
+    router.message.register(cmd_vuz2_rating_second_module,
+                            Command('vuz2_second_module', 'второй_модуль', 'вм', prefix='/!'))
+    router.message.register(cmd_vuz2_rating_final_module,
+                            Command('vuz2_final_module', 'итоговый_модуль', 'им', prefix='/!'))
