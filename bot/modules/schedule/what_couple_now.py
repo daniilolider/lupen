@@ -65,7 +65,7 @@ def what_couple_now():
 
         if lesson_number == 0:
             text += f'✏️Сейчас:{week[weekday][0]}\n' \
-                    f'⌚️Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n' \
+                    f'⏳Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n' \
                     f'▶️Будет:{week[weekday][1]}'
 
         elif lesson_number == 4:
@@ -75,7 +75,7 @@ def what_couple_now():
         else:
             text += f'◀️Была:{week[weekday][lesson_number - 1]}\n' \
                     f'✏️Сейчас:{week[weekday][lesson_number]}\n' \
-                    f'⌚️Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n' \
+                    f'⏳Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n' \
                     f'▶️Будет:{week[weekday][lesson_number + 1]}'
 
         return text
@@ -95,7 +95,7 @@ def what_couple_now():
         else:
             text += f'◀️Была:{week[weekday][lesson_number - 1]}\n' \
                     f'✏️Сейчас: 🤟<i>Перемена</i>\n' \
-                    f'⌚️Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n' \
+                    f'⏳Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n' \
                     f'▶️Будет:{week[weekday][lesson_number]}'
 
         return text
