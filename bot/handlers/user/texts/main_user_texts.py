@@ -7,6 +7,8 @@ from .schedule_message import text_schedule
 from .what_couple_message import txt_what_couple
 from .ChatGPT_questmessage import txt_chatgpt_questmessage
 from .vuz2_rating import txt_vuz2_rating
+from .remove_keyboard import txt_remove_keyboard
+from .return_keyboard_message import txt_return_keyboard
 
 
 def reg_user_texts(router: Router):
@@ -16,3 +18,5 @@ def reg_user_texts(router: Router):
     router.message.register(txt_what_couple, Text('❓Какая сейчас пара?❔'))
     router.message.register(txt_chatgpt_questmessage, Text('🤖Вопрос ChatGPT'))
     router.message.register(txt_vuz2_rating, Text('🔢Рейтинг'))
+    router.message.register(txt_remove_keyboard, Text('⬇️Скрыть клавиатуру'))
+    router.message.register(txt_return_keyboard, Text(['Вернуть кнопки', 'ВК']))

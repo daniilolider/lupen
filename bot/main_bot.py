@@ -32,5 +32,6 @@ async def start_bot():
     reg_all_callbacks()
 
     print('Online!')
+    await bot.send_message(KEYS.creator_ID, 'Online!')
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)

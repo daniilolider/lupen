@@ -15,6 +15,7 @@ from bot.handlers.user.commands.vuz2_rating.vuz2_rating_offsets import cmd_vuz2_
 from bot.handlers.user.commands.vuz2_rating.vuz2_rating_first_module import cmd_vuz2_rating_first_module
 from bot.handlers.user.commands.vuz2_rating.vuz2_rating_second_module import cmd_vuz2_rating_second_module
 from bot.handlers.user.commands.vuz2_rating.vuz2_rating_final_module import cmd_vuz2_rating_final_module
+from bot.handlers.user.commands.other.return_keyboard import cmd_return_keyboard
 
 
 def reg_user_commands(router: Router):
@@ -51,3 +52,5 @@ def reg_user_commands(router: Router):
                             Command('vuz2_second_module', 'второй_модуль', 'вм', prefix='/!'))
     router.message.register(cmd_vuz2_rating_final_module,
                             Command('vuz2_final_module', 'итоговый_модуль', 'им', prefix='/!'))
+
+    router.message.register(cmd_return_keyboard, Command('return_keyboard', 'rk', prefix='/!'))

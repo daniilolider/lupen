@@ -150,9 +150,6 @@ lupen's requirements
 # Белый список
 whitelist.txt
 
-# Стандарт структуры
-Описание структуры.txt
-
 # Логи
 logs.log
 

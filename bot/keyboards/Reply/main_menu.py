@@ -12,6 +12,9 @@ def main_menu() -> ReplyKeyboardMarkup:
     builder.button(text='🔢Рейтинг')
     what_couple_button = KeyboardButton(text='❓Какая сейчас пара?❔')
     builder.row(what_couple_button)
+    remove_keyboard = KeyboardButton(text='⬇️Скрыть клавиатуру')
+    help_button = KeyboardButton(text='❔Помощь')
+    builder.row(help_button, remove_keyboard)
 
     keyboard = builder.as_markup(resize_keyboard=True, input_field_placeholder='Что будем делать?')
 
