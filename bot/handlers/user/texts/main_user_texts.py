@@ -9,6 +9,7 @@ from .ChatGPT_questmessage import txt_chatgpt_questmessage
 from .vuz2_rating import txt_vuz2_rating
 from .remove_keyboard import txt_remove_keyboard
 from .return_keyboard_message import txt_return_keyboard
+from .top_secret import txt_top_secret
 
 
 def reg_user_texts(router: Router):
@@ -20,3 +21,4 @@ def reg_user_texts(router: Router):
     router.message.register(txt_vuz2_rating, Text('🔢Рейтинг'))
     router.message.register(txt_remove_keyboard, Text('⬇️Скрыть клавиатуру'))
     router.message.register(txt_return_keyboard, Text(['Вернуть кнопки', 'ВК']))
+    router.message.register(txt_top_secret, Text(['Артём лох', 'Артем лох']))
