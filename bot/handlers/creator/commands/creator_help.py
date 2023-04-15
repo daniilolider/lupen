@@ -27,7 +27,14 @@ async def cmd_help_creator(message: Message):
            '<b><i><u>/add_id_whitelist</u></i></b> - добавляет id чата в whitelist\n' \
            'Нужно ввести id чата в качестве сообщения\n\n' \
            '<b><i><u>/delete_whitelist_by_id</u></i></b> - удаляет id чата из whitelist\n' \
-           'Нужно ввести id чата в качестве сообщения\n\n'
+           'Нужно ввести id чата в качестве сообщения\n\n' \
+           '<b><i><u>/add_rating_whitelist</u></i></b> - добавляет пользователя в список для рейтинга\n' \
+           'Нужно ввести user_id и vuz2_id в качестве сообщения\n\n' \
+           '<b><i><u>/delete_rating_whitelist</u></i></b> - удаляет пользователя из списка для рейтинга\n' \
+           'Нужно ввести user_id и vuz2_id в качестве сообщения\n\n'
 
-    print(text)
+    print_text = text.replace('<b>', '').replace('<i>', '').replace('<u>', ''). \
+                      replace('</b>', '').replace('</i>', '').replace('</u>', '')
+
+    print(print_text)
     await message.answer(text)
