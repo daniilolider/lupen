@@ -145,10 +145,10 @@ cython_debug/
 .idea
 
 # ТЗ бота
-lupen's requirements.txt
+lupen's ideas.txt
 
 # Белый список
-
+whitelist.txt
 
 # Логи
 logs.log
