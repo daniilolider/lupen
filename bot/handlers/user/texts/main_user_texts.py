@@ -1,15 +1,15 @@
 from aiogram import Router
 from aiogram.filters import Text
 
-from .help_message import text_help
-from .menu import text_menu
-from .schedule_message import text_schedule
-from .what_couple_message import txt_what_couple
-from .ChatGPT_questmessage import txt_chatgpt_questmessage
-from .vuz2_rating import txt_vuz2_rating
-from .remove_keyboard import txt_remove_keyboard
-from .return_keyboard_message import txt_return_keyboard
-from .top_secret import txt_top_secret
+from bot.handlers.user.texts.main_buttons.help_message import text_help
+from bot.handlers.user.texts.main_buttons.menu import text_menu
+from bot.handlers.user.texts.schedule.schedule_message import text_schedule
+from bot.handlers.user.texts.schedule.what_couple_message import txt_what_couple
+from bot.handlers.user.texts.ChatGPT.ChatGPT_questmessage import txt_chatgpt_questmessage
+from bot.handlers.user.texts.vuz2_rating.vuz2_rating import txt_vuz2_rating
+from bot.handlers.user.texts.keyboard_movement.remove_keyboard import txt_remove_keyboard
+from bot.handlers.user.texts.keyboard_movement.return_keyboard_message import txt_return_keyboard
+from bot.handlers.user.texts.top_secret.top_secret import txt_top_secret
 
 
 def reg_user_texts(router: Router):

@@ -1,14 +1,14 @@
 from aiogram import Router
 from aiogram.filters import Command
 
-from .chat_id import cmd_chat_id
-from .add_whitelist import cmd_add_whitelist
-from .delete_whitelist import cmd_delete_whitelist
-from .creator_help import cmd_help_creator
-from .add_whitelist_by_id import cmd_add_whitelist_by_id
-from .delete_whitelist_by_id import cmd_delete_whitelist_by_id
-from .vuz2_rating_add import cmd_add_rating_whitelist
-from .vuz2_rating_delete import cmd_delete_rating_whitelist
+from bot.handlers.creator.commands.other.chat_id import cmd_chat_id
+from bot.handlers.creator.commands.whitelist.add_whitelist import cmd_add_whitelist
+from bot.handlers.creator.commands.whitelist.delete_whitelist import cmd_delete_whitelist
+from bot.handlers.creator.commands.other.creator_help import cmd_help_creator
+from bot.handlers.creator.commands.whitelist.add_whitelist_by_id import cmd_add_whitelist_by_id
+from bot.handlers.creator.commands.whitelist.delete_whitelist_by_id import cmd_delete_whitelist_by_id
+from bot.handlers.creator.commands.vuz2_whitelist.vuz2_rating_add import cmd_add_rating_whitelist
+from bot.handlers.creator.commands.vuz2_whitelist.vuz2_rating_delete import cmd_delete_rating_whitelist
 
 
 def reg_creator_commands(router: Router):

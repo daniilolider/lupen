@@ -2,19 +2,19 @@ from pathlib import Path
 from aiogram.types import Message
 
 
-async def cmd_delete_whitelist_by_id(message: Message) -> None:
-    """Добавляет chatid (чат) в белый список"""
+async def cmd_delete_whitelist(message: Message):
+    """Удаляет chatid (чат) из белого списка"""
     from bot.misc.env import KEYS
 
     if KEYS.WHITELIST_STATUS:  # whitelist должен быть включен
 
-        path = Path('bot', 'data', 'databases', 'whitelist', 'whitelist.txt')
+        path = Path('bot', 'data', 'databases', '', 'whitelist.txt')
         with open(path, 'r', encoding='utf-8') as f:
-            whitelist = [id for id in f.readlines()]
+            whitelist = f.readlines()
 
         # Есть ли chat_id уже в whitelist
-        if str(message.text.split()[-1]) in [id.rstrip() for id in whitelist]:
-            whitelist.remove(f'{message.text.split()[-1]}\n')
+        if str(message.chat.id) in [id.rstrip() for id in whitelist]:
+            whitelist.remove(f'{str(message.chat.id)}\n')
 
             # Удаляем
             with open(path, 'w', encoding='utf-8') as f:
@@ -26,3 +26,4 @@ async def cmd_delete_whitelist_by_id(message: Message) -> None:
 
     else:
         print("whitelist isn't enable")
+

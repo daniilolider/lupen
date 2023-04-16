@@ -148,7 +148,7 @@ cython_debug/
 lupen's requirements.txt
 
 # Белый список
-whitelist.txt
+
 
 # Логи
 logs.log

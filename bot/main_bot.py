@@ -5,7 +5,6 @@ from aiogram import Dispatcher, Bot
 
 from bot.misc.env import KEYS
 
-
 from bot.routers.unregistered_router.unregistered_router import unregistered_router
 from bot.routers.creator.creator_router import creator_router
 

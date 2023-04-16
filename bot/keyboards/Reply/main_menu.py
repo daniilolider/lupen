@@ -16,7 +16,8 @@ def main_menu() -> ReplyKeyboardMarkup:
     help_button = KeyboardButton(text='❔Помощь')
     builder.row(help_button, remove_keyboard)
 
-    keyboard = builder.as_markup(resize_keyboard=True, input_field_placeholder='Что будем делать?')
+    keyboard = builder.as_markup(resize_keyboard=True,
+                                 input_field_placeholder='Что будем делать?')
 
     return keyboard
 
