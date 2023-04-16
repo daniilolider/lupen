@@ -16,4 +16,4 @@ jobs:
       - run: echo "$" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Deploy
-      - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . olider_db@tpofszrpwc.beget.ru:/home/olider_db/LupenBot/lupen-main
+      - run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . olider_db@45.146.165.53:/home/olider_db/LupenBot/lupen-main
