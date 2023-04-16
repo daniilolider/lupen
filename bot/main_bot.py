@@ -12,6 +12,9 @@ from bot.callbacks.main_callbacks import reg_all_callbacks
 from bot.handlers.main_handlers import reg_all_handlers
 
 
+bot = Bot(token=KEYS.lupen_TOKEN, parse_mode='html')
+
+
 async def start_bot():
 
     logging.basicConfig(level=logging.INFO,
@@ -22,7 +25,6 @@ async def start_bot():
 
     openai.api_key = KEYS.chatgpt_TOKEN
 
-    bot = Bot(token=KEYS.lupen_TOKEN, parse_mode='html')
     dp = Dispatcher()
 
     dp.include_routers(unregistered_router, creator_router)
