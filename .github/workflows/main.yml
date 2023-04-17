@@ -22,17 +22,9 @@ jobs:
         with:
           key: "${{ secrets.MY_KEY }}"
           known_hosts: "just-a-placeholder-so-we-dont-get-errors"
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> d8a133b0c1e5692749d26549fc555bc38fb08683
       - name: Generate auth hosts
         run: ssh-keyscan -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts
 
       # Deploy
-<<<<<<< HEAD
       - run: rsync --archive --compress --progress . ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
-=======
-      - run: rsync --archive --compress --progress . ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
->>>>>>> d8a133b0c1e5692749d26549fc555bc38fb08683
