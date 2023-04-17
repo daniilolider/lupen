@@ -2,6 +2,7 @@ import openai
 from aiogram.types import Message
 
 
+# НАДО НА ASYNC ПЕРЕПИСАТЬ
 def reply_ChatGPT(message: Message):
     """Ответ ChatGPT"""
     messages = []
@@ -16,4 +17,4 @@ def reply_ChatGPT(message: Message):
 
     answer = f"<b><i>ChatGPT:\n</i></b>{reply}"
 
-    return answer  # НАДО НА ASYNC ПЕРЕПИСАТЬ
+    return answer
