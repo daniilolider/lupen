@@ -20,7 +20,7 @@ def what_couple_now():
     # lesson_number - номер пары или перемены
     weekday, lesson_status, lesson_number = time_interval(now)
 
-    date = datetime.datetime.now().date().strftime('%d.%m.%Y')  # Сегодняшняя дата
+    date = datetime.datetime.now(tz).date().strftime('%d.%m.%Y')  # Сегодняшняя дата
 
     # Дни недели
     weekdays = {0: 'понедельник',

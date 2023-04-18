@@ -12,7 +12,8 @@ def event_remains(number_of_couple: int, event_status: str) -> str:
     else:
         event = {0: FIRTS_START, 1: SECOND_START, 2: THIRD_START, 3: FOURTH_START, 4: FIFTH_START}
 
-    now = datetime.datetime.now()
+    tz = pytz.timezone('Europe/Minsk')
+    now = datetime.datetime.now(tz)
 
     event_hour = event[number_of_couple].hour
     event_minutes = event[number_of_couple].minute
