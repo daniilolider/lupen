@@ -12,12 +12,10 @@ def event_remains(number_of_couple: int, event_status: str) -> str:
     else:
         event = {0: FIRTS_START, 1: SECOND_START, 2: THIRD_START, 3: FOURTH_START, 4: FIFTH_START}
 
-    tz = pytz.timezone('Europe/Minsk')
-    now = datetime.datetime.now(tz)
+    now = datetime.datetime.now()
 
     event_hour = event[number_of_couple].hour
     event_minutes = event[number_of_couple].minute
 
     delta = str(datetime.datetime(now.year, now.month, now.day, event_hour, event_minutes) - now)
-
-    return delta[: -7]
+    return delta[:-7]

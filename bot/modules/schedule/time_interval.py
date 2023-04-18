@@ -6,8 +6,7 @@ from bot.data.schedule.couple_constants import FIRST_END, SECOND_END, THIRD_END,
 
 def time_interval(now):
     """Определяет, какой сейчас день недели, какая пара или перемена по счёту и определяет идёт пара или перемена"""
-    tz = pytz.timezone('Europe/Minsk')
-    weekday = datetime.datetime.now(tz).weekday()
+    weekday = datetime.datetime.now().weekday()
     lesson_status = None
     lesson_number = 0
 

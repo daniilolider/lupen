@@ -1,5 +1,4 @@
 import datetime
-import pytz
 
 from bot.data.schedule.couple_constants import up_week, down_week
 from .time_interval import time_interval
@@ -9,10 +8,8 @@ from .event_remains import event_remains
 
 def what_couple_now():
     """Опредяет что должно выводится в определённый промежуток времени"""
-
     week = (up_week, down_week)[WEEK_POSITION]  # Наша неделя, верхняя/нижняя
-    tz = pytz.timezone('Europe/Minsk')
-    now = datetime.datetime.now(tz).time()  # Время, когда вызвали функцию
+    now = datetime.datetime.now().time()  # Время, когда вызвали функцию
     up_or_down = "⬇️<i>Нижняя неделя</i>⬇️" if WEEK_POSITION else "⬆️<i>Верхняя неделя</i>⬆️"
 
     # weekday - день недели
@@ -20,7 +17,7 @@ def what_couple_now():
     # lesson_number - номер пары или перемены
     weekday, lesson_status, lesson_number = time_interval(now)
 
-    date = datetime.datetime.now(tz).date().strftime('%d.%m.%Y')  # Сегодняшняя дата
+    date = datetime.datetime.now().date().strftime('%d.%m.%Y')  # Сегодняшняя дата
 
     # Дни недели
     weekdays = {0: 'понедельник',

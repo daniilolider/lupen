@@ -1,31 +1,35 @@
 import datetime
+#import pytz
+
+
+#tz = pytz.timezone('Europe/Minsk')
 
 
 # Первая пара
-FIRTS_START = datetime.time(8, 30)  # Начало
-FIRST_END = datetime.time(10, 5)  # Конец
+FIRTS_START = datetime.time(5, 30)  # Начало
+FIRST_END = datetime.time(7, 5)  # Конец
 
 # Вторая пара
-SECOND_START = datetime.time(10, 25)
-SECOND_END = datetime.time(12)
+SECOND_START = datetime.time(7, 25)
+SECOND_END = datetime.time(9)
 
 # Третья пара
-THIRD_START = datetime.time(12, 30)
-THIRD_END = datetime.time(14, 5)
+THIRD_START = datetime.time(9, 30)
+THIRD_END = datetime.time(11, 5)
 
 # Четвертая пара
-FOURTH_START = datetime.time(14, 20)
-FOURTH_END = datetime.time(15, 55)
+FOURTH_START = datetime.time(11, 20)
+FOURTH_END = datetime.time(12, 55)
 
 # Пятая пара
-FIFTH_START = datetime.time(16, 5)
-FIFTH_END = datetime.time(17, 40)
+FIFTH_START = datetime.time(13, 5)
+FIFTH_END = datetime.time(14, 40)
 
 # Начало дня
-DAY_START = datetime.time(0, 0, 0)
+DAY_START = datetime.time(21, 0, 0)
 
 # Конец дня
-DAY_END = datetime.time(23, 59, 59)
+DAY_END = datetime.time(20, 59, 59)
 
 
 down_monday = [' <b>•</b> <i>Аналитическая геометрия</i> лекция <b>418</b>',
