@@ -14,8 +14,6 @@ def event_remains(number_of_couple: int, event_status: str) -> str:
 
     now = datetime.datetime.now()
 
-    event_hour = event[number_of_couple].hour
-    event_minutes = event[number_of_couple].minute
+    delta = str(datetime.datetime.combine(datetime.datetime.today(), event[number_of_couple]) - now)
 
-    delta = str(datetime.datetime(now.year, now.month, now.day, event_hour, event_minutes) - now)
     return delta[:-7]

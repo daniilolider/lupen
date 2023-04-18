@@ -1,35 +1,42 @@
-import datetime
-#import pytz
+from datetime import time, datetime
+import pytz
 
 
-#tz = pytz.timezone('Europe/Minsk')
+def utc_times(hours: int = 0, minutes: int = 0, seconds: int = 0, timezone_name: str = 'Europe/Minsk'):
+    """Преобразует объект time по локальному поясу в time по UTC"""
+    tz = pytz.timezone(timezone_name)
+    utc_timezone = pytz.utc
+    local_time = time(hours, minutes, seconds)
+    _datetime = datetime.combine(datetime.today(), local_time)
+    local_datime = tz.localize(_datetime)
+    return local_datime.astimezone(utc_timezone).time()
 
 
 # Первая пара
-FIRTS_START = datetime.time(5, 30)  # Начало
-FIRST_END = datetime.time(7, 5)  # Конец
+FIRTS_START = utc_times(8, 30)  # Начало
+FIRST_END = utc_times(10, 5)  # Конец
 
 # Вторая пара
-SECOND_START = datetime.time(7, 25)
-SECOND_END = datetime.time(9)
+SECOND_START = utc_times(10, 25)
+SECOND_END = utc_times(12)
 
 # Третья пара
-THIRD_START = datetime.time(9, 30)
-THIRD_END = datetime.time(11, 5)
+THIRD_START = utc_times(12, 30)
+THIRD_END = utc_times(14, 5)
 
 # Четвертая пара
-FOURTH_START = datetime.time(11, 20)
-FOURTH_END = datetime.time(12, 55)
+FOURTH_START = utc_times(14, 20)
+FOURTH_END = utc_times(15, 55)
 
 # Пятая пара
-FIFTH_START = datetime.time(13, 5)
-FIFTH_END = datetime.time(14, 40)
+FIFTH_START = utc_times(16, 5)
+FIFTH_END = utc_times(17, 40)
 
 # Начало дня
-DAY_START = datetime.time(21, 0, 0)
+DAY_START = utc_times(0, 0, 0)
 
 # Конец дня
-DAY_END = datetime.time(20, 59, 59)
+DAY_END = utc_times(23, 59, 59)
 
 
 down_monday = [' <b>•</b> <i>Аналитическая геометрия</i> лекция <b>418</b>',
