@@ -1,16 +1,16 @@
 import datetime
 
 from bot.data.schedule.couple_constants import up_week, down_week
-from .time_interval import time_interval
-from .week_position import WEEK_POSITION
-from .event_remains import event_remains
+from bot.modules.schedule.time_interval import time_interval
+from bot.modules.schedule.week_position import up_down_week
+from bot.modules.schedule.event_remains import event_remains
 
 
 def what_couple_now():
     """Опредяет что должно выводится в определённый промежуток времени"""
-    week = (up_week, down_week)[WEEK_POSITION]  # Наша неделя, верхняя/нижняя
+    week = (up_week, down_week)[up_down_week()]  # Наша неделя, верхняя/нижняя
     now = datetime.datetime.now().time()  # Время, когда вызвали функцию
-    up_or_down = "⬇️<i>Нижняя неделя</i>⬇️" if WEEK_POSITION else "⬆️<i>Верхняя неделя</i>⬆️"
+    up_or_down = "⬇️<i>Нижняя неделя</i>⬇️" if up_down_week() else "⬆️<i>Верхняя неделя</i>⬆️"
 
     # weekday - день недели
     # lesson_status - пара или перемена. True - пара, False - перемена
@@ -67,7 +67,8 @@ def what_couple_now():
 
         elif lesson_number == 4:
             text += f'◀️Была:{week[weekday][lesson_number - 1]}\n' \
-                    f'✏️Сейчас:{week[weekday][lesson_number]}'
+                    f'✏️Сейчас:{week[weekday][lesson_number]}' \
+                    f'⏳Осталось: <i>{event_remains(lesson_number, lesson_status)}</i>\n'
 
         else:
             text += f'◀️Была:{week[weekday][lesson_number - 1]}\n' \
@@ -88,7 +89,8 @@ def what_couple_now():
 
         elif lesson_number == 4:
             text += f'◀️Была:{week[weekday][lesson_number]}\n' \
-                    f'✏️Сейчас: 🔚<i>Учеба уже закончилась</i>'
+                    f'✏️Сейчас: 🔚<i>Учеба уже закончилась</i>' \
+
         else:
             text += f'◀️Была:{week[weekday][lesson_number - 1]}\n' \
                     f'✏️Сейчас: 🤟<i>Перемена</i>\n' \

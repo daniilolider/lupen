@@ -31,15 +31,15 @@ def vuz2_request(chat_id: int, type_of_control: str) -> str:
     elif type_of_control == 'Зачёт Дата':  # Зачёты - вторая строка
         number_of_control = 1
     else:  # Оставшиеся - модули, тут могут быть: 1-ый модуль, 2-ой модуль, Итоговый модуль
-        number_of_control = list_of_controls.index(type_of_control)
+        try:
+            number_of_control = list_of_controls.index(type_of_control)
+        except:  # У РБ нет строки Итоговый модуль
+            text = '😭Простите, но у вас <u><b><i>нет</i></b></u> такой ' \
+                   '<u><b><i>строчки</i></b></u> в вашей таблице рейтинга'
+            return text
 
     # Баллы без среднего
     marks = [df[0].iloc[number_of_control, i] for i in range(1, len(df[0].iloc[0]) - 1)]
-
-    # Средний балл
-    avarage_mark = df[0].iloc[number_of_control, -1]
-    if len(str(avarage_mark)) in (3, 4):  # Ставим точку в нужное место
-        avarage_mark /= 100
 
     name_of_control = {
         'Экзамен Дата': '📝Экзамены',
@@ -53,15 +53,29 @@ def vuz2_request(chat_id: int, type_of_control: str) -> str:
     text = f'<b>{control}:</b>\n'
 
     # Составляем сообщения
+    sum_of_marks = 0  # Сумма для подсчета среднего балла
+    count_of_marks = 0  # Количество оценок
     for item, mark in zip(items, marks):
         # Для модулей
         if type_of_control in ('1-ый модуль', '2-ой модуль', 'Итоговый модуль'):
             if mark != '-':  # В сообщение не включаем те предметы, по которым нет модулей
-                text += f'✦<i>{item}</i>: <b>{mark}</b>\n'.replace('nan', '0')
+                if str(mark) == 'nan':  # Заменяем все nan на 0
+                    mark = '0'
+                text += f'✦<i>{item}</i>: <b>{mark}</b>\n'
+                # Для среднего балла
+                sum_of_marks += int(mark)
+                count_of_marks += 1
         else:  # Для экзаменов/зачётов
             if mark != '-':  # В сообщение не включаем те предметы, по которым нет экзамена/зачёта
+                if str(mark) == 'nan':  # Заменяем все nan на 0
+                    mark = '0'
                 text += f'✦<i>{item}</i>: <b>{mark}</b>\n'.replace('nan', 'Нет результата')
+                # Для среднего балла
+                sum_of_marks += int(mark)
+                count_of_marks += 1
+
     # Добавляем строку со средним баллом
+    avarage_mark = round(sum_of_marks / count_of_marks, 2)
     text += f'✦<i>Средний балл</i>: <b>{avarage_mark}</b>'
 
     return text

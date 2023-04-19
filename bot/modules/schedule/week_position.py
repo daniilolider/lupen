@@ -9,6 +9,3 @@ def up_down_week():
         return 1  # Нечётная - нижняя
     else:
         return 0  # Чётная - верхняя
-
-
-WEEK_POSITION = up_down_week()
