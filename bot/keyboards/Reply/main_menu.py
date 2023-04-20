@@ -1,23 +1,25 @@
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 def main_menu() -> ReplyKeyboardMarkup:
-    """Клавиатура галвного меню"""
+    """Клавиатура главного меню"""
 
-    builder = ReplyKeyboardBuilder()
-
-    builder.button(text='📋Расписание')
-    builder.button(text='🤖Вопрос ChatGPT')
-    builder.button(text='🔢Рейтинг')
+    schedule_button = KeyboardButton(text='📋Расписание')
+    chatgpt_quest_button = KeyboardButton(text='🤖Вопрос ChatGPT')
+    vuz2_rating_button = KeyboardButton(text='🔢Рейтинг')
     what_couple_button = KeyboardButton(text='❓Какая сейчас пара?❔')
-    builder.row(what_couple_button)
     remove_keyboard = KeyboardButton(text='⬇️Скрыть клавиатуру')
     help_button = KeyboardButton(text='❔Помощь')
-    builder.row(help_button, remove_keyboard)
 
-    keyboard = builder.as_markup(resize_keyboard=True,
-                                 input_field_placeholder='Что будем делать?')
+    kb = [
+        [schedule_button, chatgpt_quest_button, vuz2_rating_button],
+        [what_couple_button],
+        [help_button, remove_keyboard]
+    ]
+
+    keyboard = ReplyKeyboardMarkup(keyboard=kb,
+                                   resize_keyboard=True,
+                                   input_field_placeholder='Что будем делать?')
 
     return keyboard
 

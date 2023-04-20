@@ -1,15 +1,16 @@
-from aiogram.types import ReplyKeyboardMarkup
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 def start_menu_kb() -> ReplyKeyboardMarkup:
     """Клавиатура при запуске бота"""
 
-    builder = ReplyKeyboardBuilder()
+    menu_button = KeyboardButton(text='📓Меню')
+    help_button = KeyboardButton(text='❔Помощь')
 
-    builder.button(text='📓Меню')
-    builder.button(text='❔Помощь')
+    kb = [[menu_button, help_button]]
 
-    keyboard = builder.as_markup(resize_keyboard=True, input_field_placeholder='Куда пойдем?')
+    keyboard = ReplyKeyboardMarkup(keyboard=kb,
+                                   resize_keyboard=True,
+                                   input_field_placeholder='Куда пойдем?')
 
     return keyboard
