@@ -8,8 +8,8 @@ def utc_times(hours: int = 0, minutes: int = 0, seconds: int = 0, timezone_name:
     utc_timezone = pytz.utc
     local_time = time(hours, minutes, seconds)
     _datetime = datetime.combine(datetime.today(), local_time)
-    local_datime = tz.localize(_datetime)
-    return local_datime.astimezone(utc_timezone).time()
+    local_datetime = tz.localize(_datetime)
+    return local_datetime.astimezone(utc_timezone).time()
 
 
 # Первая пара
@@ -36,7 +36,7 @@ FIFTH_END = utc_times(17, 40)
 DAY_START = utc_times(3, 0)
 
 # Конец дня
-DAY_END = utc_times(23, 59)
+DAY_END = utc_times(2, 59)
 
 
 down_monday = [' <b>•</b> <i>Аналитическая геометрия</i> лекция <b>418</b>',
