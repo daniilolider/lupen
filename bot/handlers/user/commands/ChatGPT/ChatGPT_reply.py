@@ -12,7 +12,7 @@ async def cmd_chatgpt_message(message: Message):
         if message.text[2:].rstrip() != '':
             experctation_text = '🤖ChatGPT печатает для вас ответ✏️\nПожалуйста, подождите...⏳'
             await message.answer(experctation_text)
-            reply = reply_ChatGPT(message)
+            reply = await reply_ChatGPT(message)
             await message.answer(reply)
         else:
             text = '😞Вы ввели пустую строку\n' \

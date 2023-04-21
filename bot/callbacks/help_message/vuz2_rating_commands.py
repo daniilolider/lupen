@@ -23,6 +23,9 @@ async def send_vuz2_rating_commands(callback: CallbackQuery):
                        '<b><i>/второй_модуль, /вм</i></b>\n\n' \
                        '' \
                        '✦<b><i><u>/vuz2_final_module</u></i></b> - Выводит строку итоговый модуль из таблицы рейтинга vuz2\n' \
+                       '<b><i>/итоговый_модуль, /им</i></b>\n\n' \
+                       '' \
+                       '✦<b><i><u>/vuz2_passes</u></i></b> - Выводит пропуски из vuz2\n' \
                        '<b><i>/итоговый_модуль, /им</i></b>'
 
     await callback.message.answer(vuz2_rating_text)

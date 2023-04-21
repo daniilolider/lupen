@@ -3,7 +3,7 @@ from aiogram.types import Message
 
 
 # НАДО НА ASYNC ПЕРЕПИСАТЬ
-def reply_ChatGPT(message: Message):
+async def reply_ChatGPT(message: Message):
     """Ответ ChatGPT"""
     messages = []
 
@@ -11,7 +11,7 @@ def reply_ChatGPT(message: Message):
 
     messages.append({"role": "user", "content": user_message})
 
-    chat = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
+    chat = await openai.ChatCompletion.acreate(model="gpt-3.5-turbo", messages=messages)
 
     reply = chat.choices[0].message.content
 
