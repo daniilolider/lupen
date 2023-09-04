@@ -8,7 +8,7 @@ async def cmd_delete_whitelist(message: Message):
 
     if KEYS.WHITELIST_STATUS:  # whitelist должен быть включен
 
-        path = Path('bot', 'data', 'databases', '', 'whitelist.txt')
+        path = Path('bot', 'data', 'databases', 'whitelist', 'whitelist.txt')
         with open(path, 'r', encoding='utf-8') as f:
             whitelist = f.readlines()
 

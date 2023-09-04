@@ -8,7 +8,7 @@ async def cmd_add_whitelist(message: Message) -> None:
 
     if KEYS.WHITELIST_STATUS:  # whitelist должен быть включен
 
-        path = Path('bot', 'data', 'databases', '', 'whitelist.txt')
+        path = Path('bot', 'data', 'databases', 'whitelist', 'whitelist.txt')
         with open(path, 'r', encoding='utf-8') as f:
             chat_id = str(message.chat.id)
             whitelist = [id.rstrip() for id in f.readlines()]
