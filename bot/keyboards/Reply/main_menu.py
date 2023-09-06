@@ -12,7 +12,7 @@ def main_menu() -> ReplyKeyboardMarkup:
     help_button = KeyboardButton(text='❔Помощь')
 
     kb = [
-        [schedule_button, chatgpt_quest_button],  # Без vuz2_rating_button
+        [schedule_button],  # Без vuz2_rating_button, chatgpt_quest_button
         [what_couple_button],
         [help_button, remove_keyboard]
     ]
